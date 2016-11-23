@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 
 
+
 public class finishScreenHider : MonoBehaviour {
     
     GameObject HealthThing;
@@ -11,8 +12,9 @@ public class finishScreenHider : MonoBehaviour {
     bool player1Dead;
     bool player2Dead;
 
-	// Use this for initialization
-    void Start()
+
+    // Use this for initialization
+        void Start()
     {
         redTeamCanvas = GameObject.Find("RedTeamWin");
         blueTeamCanvas = GameObject.Find("BlueTeamWin");
@@ -28,6 +30,7 @@ public class finishScreenHider : MonoBehaviour {
         { //blue team won
             Debug.Log("unloading red...");
             blueTeamCanvas.SetActive(true);
+
 
         }
         else if (player2Dead)

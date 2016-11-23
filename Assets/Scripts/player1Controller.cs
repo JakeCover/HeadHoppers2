@@ -1,12 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using CnControls;
+
 
 
 public class player1Controller : MonoBehaviour {
 
     public bool p1IsDoingSomthing = new bool();
- 
+    Vector3 movement;
 
 
 	// Use this for initialization
@@ -32,26 +34,13 @@ public class player1Controller : MonoBehaviour {
         }
     }
 ***/
+
 	// Update is called once per frame
 	void Update () {
+        movement = new Vector3(CnInputManager.GetAxis("Horizontal1"), CnInputManager.GetAxis("Vertical1"), 0f);
+        transform.Translate(movement * Time.deltaTime * 15);
 
-        
-        
-        //movement
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.Translate(new Vector3(-5, 0, 0) * Time.deltaTime);
-            print("A key was pressed");
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            transform.Translate(new Vector3(5, 0, 0) * Time.deltaTime);
-            print("D key was pressed");
-        }
-        if (Input.GetKey(KeyCode.W))
-        {
-            transform.Translate(new Vector3(0, 10, 0) * Time.deltaTime);
-            print("W key was pressed");
-        }
-	}
+
+    }
 }
+

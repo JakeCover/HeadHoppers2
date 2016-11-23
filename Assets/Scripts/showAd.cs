@@ -3,7 +3,7 @@ using UnityEngine.Advertisements;
 
 public class showAd : MonoBehaviour
 {
-    void Start()
+    public void showAdNow()
     {
         if (Advertisement.IsReady())
         {
